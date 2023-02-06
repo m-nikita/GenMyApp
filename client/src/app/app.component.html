@@ -1,1 +1,17 @@
+<div id="topNavBar" class="row m-0 p-3">
+    <div class="col">Logo</div>
+    <div class="col-auto">
+        <a routerLink="/">Accueil</a>
+        <a routerLink="/contact">Contact</a>
+        <a routerLink="/faq">F.A.Q.</a>
+    </div>
+    <div class="col-auto" [hidden]="isConnected">
+        <a routerLink="/login">Se connecter</a>
+        <a routerLink="/registration">S'inscrire</a>
+    </div>
+    <div class="col-auto" [hidden]="!isConnected">
+        <a routerLink="">Déconnexion</a>
+        <a routerLink="/profil">Mon profil</a>
+    </div>
+</div>
 <router-outlet></router-outlet>

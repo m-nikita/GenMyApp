@@ -1,34 +1,39 @@
 .center {
-    margin: 0 30%;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.center > .loginContainer {
-    background: linear-gradient(180deg, rgba(60,220,243,1) 0%, rgba(180,142,253,1) 50%, rgba(250,87,252,1) 100%);
+
+.formContainer {
+    background: linear-gradient(180deg, rgba(60, 220, 243, 1) 0%, rgba(180, 142, 253, 1) 50%, rgba(250, 87, 252, 1) 100%);
     width: 100%;
     box-shadow: inset 0 0 1px 1px white;
     border-radius: 20px;
 }
-.center > .loginContainer > h1 {
+
+.formContainer>h1 {
     color: white;
     font-weight: bold;
 }
-.center > .loginContainer .btn {
-    background-color: rgb(60,220,243);
+
+.formContainer .btn {
+    background-color: rgb(60, 220, 243);
     font-weight: bold;
     color: white;
 }
-.center > .loginContainer > a {
+
+.formContainer>a {
     display: block;
     width: 100%;
     text-decoration: none;
     color: white;
 }
-.center > .loginContainer > a:hover {
+
+.formContainer>a:hover {
     color: rgb(236, 236, 236);
 }
+
 .error {
     color: red;
     font-weight: bold;
@@ -39,4 +44,17 @@
     text-shadow: 1px 1px 1px black;
 }
 
+#topNavBar a {
+    margin: 1rem;
+    text-decoration: none;
+}
 
+app-login,
+app-registration,
+app-home,
+app-contact,
+app-faq {
+    display: inline-block;
+    height: 90%;
+    width: 100%;
+}

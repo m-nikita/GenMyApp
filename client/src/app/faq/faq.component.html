@@ -1,0 +1,23 @@
+<div id="faqContainer" class="row m-0 p-3 h-100">
+    <div class="col-2 h-100 overflow-auto">
+        <h2>Sommaire</h2>
+        <a *ngFor="let question of questions; index as i" href="faq#question{{i}}" class="summary">Question {{i}}</a>
+    </div>
+    <div class="col-10 h-100 overflow-auto">
+        <h2>Questions / réponses</h2>
+        <div *ngFor="let question of questions; index as i">
+            <h4 id="question{{i}}">Question {{i}}</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem magna, auctor eget ligula non,
+                lobortis
+                viverra ante. Phasellus ultrices, arcu et pellentesque pretium, magna est mollis velit, a rutrum magna
+                turpis nec nisl. Aliquam congue felis magna, et ullamcorper quam vehicula et. Donec eleifend risus sed
+                purus
+                aliquam dapibus. Duis nec neque tortor. Suspendisse nec posuere enim, id blandit eros. Etiam non enim
+                nec
+                ligula congue feugiat at id libero. Sed egestas viverra ullamcorper. Donec semper nisi bibendum gravida
+                pellentesque.
+            </p>
+        </div>
+    </div>
+</div>

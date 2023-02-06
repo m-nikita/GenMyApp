@@ -7,12 +7,18 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
+import { FAQComponent } from './faq/faq.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    HomeComponent,
+    ContactComponent,
+    FAQComponent
   ],
   imports: [
     BrowserModule,
