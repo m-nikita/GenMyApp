@@ -1,0 +1,18 @@
+<div class="center h-100">
+    <div class="loginContainer p-5">
+        <h1 class="text-shadow">Inscription</h1>
+        <span class="error">{{error}}</span>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <span class="text-white text-shadow">Nom de l'entreprise :</span>
+            <input type="text" class="form-control mb-3" name="nameEnterprise" ngModel required />
+            <span class="text-white text-shadow">Email de l'entreprise :</span>
+            <input type="email" class="form-control mb-3" name="emailEnterprise" ngModel required />
+            <span class="text-white text-shadow">Mot de passe :</span>
+            <input type="password" class="form-control mb-3" name="passwordEnterprise" ngModel required />
+            <span class="text-white text-shadow">Confirmation du mot de passe :</span>
+            <input type="password" class="form-control mb-3" name="confirmPasswordEnterprise" ngModel required />
+            <input type="submit" class="btn text-shadow my-3" value="Inscription" />
+        </form>
+        <a routerLink="/login" class="text-shadow">Vous avez déjà un compte ? Connectez-vous ici !</a>
+    </div>
+</div>

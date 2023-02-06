@@ -9,10 +9,7 @@ OU
 node server.js
 ## Client
 ### Installation
-#### Angular
 npm install --global @angular/cli
-#### Boostrap
-npm install --save boostrap
 ### Exécution
 npm run start
 OU
