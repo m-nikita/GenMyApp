@@ -1,9 +1,9 @@
 <div class="row m-0 h-100">
-    <div id="summary" class="col-2 p-3 h-100">
-        <a href="javascript:void(0)" class="d-block text-center" (click)="switchContent('generation')">Génération</a>
-        <a href="javascript:void(0)" class="d-block text-center" (click)="switchContent('history')">Historique</a>
+    <div id="summary" class="col-1 p-3 h-100">
+        <a href="javascript:void(0)" class="d-block text-center" [ngClass]="generationVisible ? 'fw-bold' : ''" (click)="switchContent('generation')">Génération</a>
+        <a href="javascript:void(0)" class="d-block text-center" [ngClass]="historyVisible ? 'fw-bold' : ''" (click)="switchContent('history')">Historique</a>
     </div>
-    <div class="col-10 p-3 h-100">
+    <div class="col-11 p-3 h-100">
         <!-- Generation page -->
         <div class="h-100" [hidden]="!generationVisible">
             <div class="d-flex flex-column h-100">
@@ -130,11 +130,14 @@
         <!-- History page -->
         <div class="h-100" [hidden]="!historyVisible">
             <div class="d-flex flex-column h-100">
-                <div class="row m-0">
-                    <h1>Historique de vos posts !</h1>
+                <div class="row m-0 px-3">
+                    <h1 class="p-0">Historique de vos posts !</h1>
                 </div>
-                <div class="row m-0 overflow-auto">
-                    <div class="row m-0 mh-100 overflow-auto">
+                <div class="row m-0 p-3">
+                    <input type="text" class="form-control" id="searchBar" value="Rechercher..."/>
+                </div>
+                <div class="row m-0 px-3 overflow-auto">
+                    <div class="row m-0 p-0">
                         <span class="fw-bold">Publication n°1</span>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem magna, auctor eget ligula non,
@@ -155,7 +158,7 @@
                         </div>
                     </div>
                     <hr class="my-3">
-                    <div class="row m-0">
+                    <div class="row m-0 p-0">
                         <span class="fw-bold">Publication n°2</span>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem magna, auctor eget ligula non,
@@ -176,7 +179,7 @@
                         </div>
                     </div>
                     <hr class="my-3">
-                    <div class="row m-0">
+                    <div class="row m-0 p-0">
                         <span class="fw-bold">Publication n°3</span>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem magna, auctor eget ligula non,
@@ -197,7 +200,7 @@
                         </div>
                     </div>
                     <hr class="my-3">
-                    <div class="row m-0">
+                    <div class="row m-0 p-0">
                         <span class="fw-bold">Publication n°4</span>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem magna, auctor eget ligula non,
