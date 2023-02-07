@@ -1,13 +1,13 @@
 <div class="center h-100">
     <div class="formContainer p-5">
         <h1 class="text-shadow">Connexion</h1>
-        <span class="error">{{error}}</span>
         <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-            <span class="text-white text-shadow">Email de l'entreprise :</span>
+            <span class="text-white text-shadow">Email de l'entreprise*</span>
             <input type="email" class="form-control mb-3" name="emailEnterprise" ngModel required />
-            <span class="text-white text-shadow">Mot de passe :</span>
+            <span class="text-white text-shadow">Mot de passe*</span>
             <input type="password" class="form-control mb-3" name="passwordEnterprise" ngModel required />
-            <input type="submit" class="btn text-shadow my-3" value="Inscription" />
+            <span class="error d-block" [ngClass]="error != '' ? 'mb-3' : ''">{{error}}</span>
+            <input type="submit" class="btn text-shadow mb-3" value="Connexion" />
         </form>
         <a routerLink="/registration" class="text-shadow">Vous n'avez pas de compte ? Inscrivez-vous ici !</a>
     </div>

@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { VariablesGlobales } from '../variables-globales';
 
 @Component({
   selector: 'app-registration',
@@ -10,13 +12,11 @@ import { NgForm } from '@angular/forms';
 export class RegistrationComponent {
   error: String = "";
 
-  constructor(private http : HttpClient) {
-
+  constructor(private vGlobales : VariablesGlobales, private http : HttpClient, private router : Router) {
+    console.log(vGlobales.token);
   }
 
   onSubmit(f: NgForm) {
-    console.log(f.value);
-    console.log(f.valid);
     this.error = "";
     if(!f.valid) {
       this.error = "Le formulaire n'est pas valide ! Des champs requis sont manquants !";
@@ -29,8 +29,12 @@ export class RegistrationComponent {
           email: f.value.emailEnterprise,
           password: f.value.passwordEnterprise 
         };
-        this.http.post('/api/auth/register', body).subscribe((data) => {
-          console.log(data);
+        this.http.post<any>(this.vGlobales.urlBack + 'auth/register', body).subscribe((data) => {
+          if(data.status == "ok") {
+            this.router.navigate(['/registration']);
+          } else {
+            this.error = "Erreur lors de l'inscription";
+          }
         });
       }
     }

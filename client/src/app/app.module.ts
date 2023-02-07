@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { FAQComponent } from './faq/faq.component';
 import { GenPostComponent } from './gen-post/gen-post.component';
+import { VariablesGlobales } from './variables-globales';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { GenPostComponent } from './gen-post/gen-post.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    VariablesGlobales
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

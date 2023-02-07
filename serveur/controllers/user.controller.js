@@ -11,8 +11,8 @@ const userRegister = async (req, res) => {
             email: req.body.email,
             password: hashedPassword,
         })
-        console.log(req.name, 'just registred!')
-        return res.status(201).json({ status: 'ok' })
+        console.log(req.body.name, 'just registred!')
+        return res.json({ status: 'ok' })
     } catch (err) {
         console.error(err)
         return res.json({ status: 'error', error: 'Duplicate email' })

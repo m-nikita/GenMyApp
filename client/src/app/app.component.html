@@ -5,12 +5,12 @@
         <a routerLink="/contact">Contact</a>
         <a routerLink="/faq">F.A.Q.</a>
     </div>
-    <div class="col-auto" [hidden]="isConnected">
+    <div class="col-auto" [hidden]="vGlobales.token != null">
         <a routerLink="/login">Se connecter</a>
         <a routerLink="/registration">S'inscrire</a>
     </div>
-    <div class="col-auto" [hidden]="!isConnected">
-        <a routerLink="">Déconnexion</a>
+    <div class="col-auto" [hidden]="vGlobales.token == null">
+        <a href="javascript:void(0)" (click)="deconnexion()">Déconnexion</a>
         <a routerLink="/profil">Mon profil</a>
     </div>
 </div>
