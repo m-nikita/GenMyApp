@@ -1,5 +1,8 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { VariablesGlobales } from '../variables-globales';
 
 @Component({
   selector: 'app-gen-post',
@@ -7,13 +10,19 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./gen-post.component.scss']
 })
 export class GenPostComponent {
-  error : string = "";
-  generationVisible : boolean = true;
-  multiplePost : boolean = false;
-  historyVisible : boolean = false;
+  error: string = "";
+  generationVisible: boolean = true;
+  multiplePost: boolean = false;
+  historyVisible: boolean = false;
 
-  switchContent(type : String) {
-    switch(type) {
+  constructor(private vGlobales: VariablesGlobales, private http: HttpClient, private router: Router) {
+    if (this.vGlobales.token == null) {
+      this.router.navigate(['/login']);
+    }
+  }
+
+  switchContent(type: String) {
+    switch (type) {
       case "generation":
         this.generationVisible = true;
         this.historyVisible = false;
@@ -37,10 +46,17 @@ export class GenPostComponent {
     console.log(f.value);
     console.log(f.valid);
     this.error = "";
-    if(!f.valid) {
+    if (!f.valid) {
       this.error = "Le formulaire n'est pas valide ! Des champs requis sont manquants !";
     } else {
-      
+
     }
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + sessionStorage.getItem('token'));
+    const body = {
+      prompt: "Description de Express.js"
+    };
+    this.http.post<any>(this.vGlobales.urlBack + 'openai/generate/answer', body, { headers }).subscribe(data => {
+      console.log(data);
+    });
   }
 }

@@ -4,6 +4,7 @@
         <a routerLink="/">Accueil</a>
         <a routerLink="/contact">Contact</a>
         <a routerLink="/faq">F.A.Q.</a>
+        <a routerLink="/genPost" [hidden]="vGlobales.token == null">MyPost</a>
     </div>
     <div class="col-auto" [hidden]="vGlobales.token != null">
         <a routerLink="/login">Se connecter</a>
