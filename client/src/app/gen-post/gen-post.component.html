@@ -1,0 +1,133 @@
+<div class="row m-0 h-100">
+    <div id="summary" class="col-2 p-3 h-100">
+        <a href="javascript:void(0)" class="d-block text-center" (click)="switchContent('generation')">Génération</a>
+        <a href="javascript:void(0)" class="d-block text-center" (click)="switchContent('history')">Historique</a>
+    </div>
+    <div class="col-10 p-3 h-100">
+        <!-- Generation page -->
+        <div id="genPage" class="h-100" [hidden]="!generationVisible">
+            <div class="h-100 d-flex flex-column">
+                <h1>Générez vos posts ici !</h1>
+                <div class="row m-0">
+                    <div id="choiceCriteria" class="col-4 p-3 overflow-auto">
+                        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                            <!-- Social media -->
+                            <select class="form-control mb-3" name="socialMedia" ngModel required>
+                                <option disabled selected>Choisir un réseau social</option>
+                                <option value="Facebook">Facebook</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="Twitter">Twitter</option>
+                            </select>
+                            <!-- Thematic -->
+                            <select class="form-control mb-3" name="thematic" ngModel required>
+                                <option disabled selected>Choisir une thématique</option>
+                                <option value="Nature">Nature</option>
+                                <option value="Animal">Animal</option>
+                                <option value="Technologie">Technologie</option>
+                            </select>
+                            <!-- Objective -->
+                            <select class="form-control mb-3" name="objective" ngModel required>
+                                <option disabled selected>Choisir un objectif</option>
+                                <option value="Promouvoir">Promouvoir</option>
+                                <option value="Informer">Informer</option>
+                                <option value="Divertir">Divertir</option>
+                                <option value="Séduire">Séduire</option>
+                            </select>
+                            <!-- Key words -->
+                            <textarea class="form-control mb-3" name="keyWords" placeholder="Mots clés..." ngModel
+                                required></textarea>
+                            <!-- Multiple post -->
+                            <input type="checkbox" class="form-check-input mb-3" id="multiplePub"
+                                (click)="changeMultiplePost()" />
+                            <label class="form-check-label mx-2" for="multiplePub">Plusieurs publications ?</label>
+                            <input type="number" class="form-control mb-3" name="numberPost" [hidden]="!multiplePost"
+                                ngModel [required]="multiplePost"/>
+                            <!-- Error -->
+                            <span class="error d-block" [ngClass]="error != '' ? 'mb-3' : ''">{{error}}</span>
+                            <!-- Buttons -->
+                            <div class="row m-0">
+                                <div class="col">
+                                    <input type="reset" class="btn btn-secondary w-100" value="Réinitialiser" (click)="reset()" />
+                                </div>
+                                <div class="col">
+                                    <input type="submit" class="btn btn-secondary w-100" value="Générer" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="genPostContainer" class="col-8 p-3 overflow-auto">
+                        <div class="row m-0">
+                            <span class="fw-bold">Publication n°1</span>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem magna, auctor eget ligula non,
+                                lobortis
+                                viverra ante. Phasellus ultrices, arcu et pellentesque pretium, magna est mollis velit, a rutrum magna
+                                turpis nec nisl. Aliquam congue felis magna, et ullamcorper quam vehicula et. Donec eleifend risus sed
+                                purus
+                                aliquam dapibus. Duis nec neque tortor. Suspendisse nec posuere enim, id blandit eros. Etiam non enim
+                                nec
+                                ligula congue feugiat at id libero. Sed egestas viverra ullamcorper. Donec semper nisi bibendum gravida
+                                pellentesque.
+                            </p>
+                            <div class="col">
+                                Mots clés
+                            </div>
+                            <div class="col text-end">
+                                <button class="btn btn-secondary">Copier</button>
+                                <button class="btn btn-secondary ms-1">Publier</button>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row m-0">
+                            <span class="fw-bold">Publication n°2</span>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem magna, auctor eget ligula non,
+                                lobortis
+                                viverra ante. Phasellus ultrices, arcu et pellentesque pretium, magna est mollis velit, a rutrum magna
+                                turpis nec nisl. Aliquam congue felis magna, et ullamcorper quam vehicula et. Donec eleifend risus sed
+                                purus
+                                aliquam dapibus. Duis nec neque tortor. Suspendisse nec posuere enim, id blandit eros. Etiam non enim
+                                nec
+                                ligula congue feugiat at id libero. Sed egestas viverra ullamcorper. Donec semper nisi bibendum gravida
+                                pellentesque.
+                            </p>
+                            <div class="col">
+                                Mots clés
+                            </div>
+                            <div class="col text-end">
+                                <button class="btn btn-secondary">Copier</button>
+                                <button class="btn btn-secondary ms-1">Publier</button>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row m-0">
+                            <span class="fw-bold">Publication n°3</span>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem magna, auctor eget ligula non,
+                                lobortis
+                                viverra ante. Phasellus ultrices, arcu et pellentesque pretium, magna est mollis velit, a rutrum magna
+                                turpis nec nisl. Aliquam congue felis magna, et ullamcorper quam vehicula et. Donec eleifend risus sed
+                                purus
+                                aliquam dapibus. Duis nec neque tortor. Suspendisse nec posuere enim, id blandit eros. Etiam non enim
+                                nec
+                                ligula congue feugiat at id libero. Sed egestas viverra ullamcorper. Donec semper nisi bibendum gravida
+                                pellentesque.
+                            </p>
+                            <div class="col">
+                                Mots clés
+                            </div>
+                            <div class="col text-end">
+                                <button class="btn btn-secondary">Copier</button>
+                                <button class="btn btn-secondary ms-1">Publier</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- History page -->
+        <div class="row m-0 h-100" [hidden]="!historyVisible">
+            <h1>Historique de vos posts !</h1>
+        </div>
+    </div>
+</div>

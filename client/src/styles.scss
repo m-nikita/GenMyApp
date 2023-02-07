@@ -1,3 +1,8 @@
+:root {
+    --color-link: black;
+    --color-link-over: gray;
+}
+
 .center {
     text-align: center;
     display: flex;
@@ -46,14 +51,23 @@
 
 #topNavBar a {
     margin: 1rem;
-    text-decoration: none;
+}
+
+a {
+    text-decoration: none !important;
+    color: var(--color-link) !important;
+}
+
+a:hover {
+    color: var(--color-link-over) !important;
 }
 
 app-login,
 app-registration,
 app-home,
 app-contact,
-app-faq {
+app-faq,
+app-gen-post {
     display: inline-block;
     height: 90%;
     width: 100%;
