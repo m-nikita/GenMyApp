@@ -3,7 +3,7 @@
 ## Serveur
 
 ### Installation
-npm install express mongoose openai cors dotenv jsonwebtoken bcrypt
+npm install express mongoose openai cors dotenv jsonwebtoken bcrypt  
 npm install --save-dev nodemon
 
 ### Exécution
@@ -20,7 +20,7 @@ npm install --global @angular/cli
 #### Boostrap
 npm install --save boostrap
 
-### ngx-clipboard
+#### ngx-clipboard
 npm install ngx-clipboard
 
 ### Exécution
