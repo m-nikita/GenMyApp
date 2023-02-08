@@ -1,23 +1,31 @@
-<div id="faqContainer" class="row m-0 p-3 h-100">
-    <div class="col-2 h-100 overflow-auto">
-        <h2>Sommaire</h2>
-        <a *ngFor="let question of questions; index as i" href="faq#question{{i}}" class="d-block">Question {{i}}</a>
+<div class="row m-0 h-100">
+    <div class="col-2 h-100 p-3 overflow-auto">
+        <h5>Sommaire</h5>
+        <hr class="my-3">
+        <div *ngFor="let question of questions">
+            <a href="faq#question{{question.id}}" class="d-block summary">{{question.id}}) {{question.question}}</a>
+            <hr class="my-3">
+        </div>
     </div>
-    <div class="col-10 h-100 overflow-auto">
-        <h2>Questions / réponses</h2>
-        <div *ngFor="let question of questions; index as i">
-            <h4 id="question{{i}}">Question {{i}}</h4>
+    <div id="faqContainer" class="col-10 h-100 overflow-auto bg-linear-gradient">
+        <div class="row m-0 mb-3">
+            <h2>Foire aux questions</h2>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem magna, auctor eget ligula non,
-                lobortis
-                viverra ante. Phasellus ultrices, arcu et pellentesque pretium, magna est mollis velit, a rutrum magna
-                turpis nec nisl. Aliquam congue felis magna, et ullamcorper quam vehicula et. Donec eleifend risus sed
-                purus
-                aliquam dapibus. Duis nec neque tortor. Suspendisse nec posuere enim, id blandit eros. Etiam non enim
-                nec
-                ligula congue feugiat at id libero. Sed egestas viverra ullamcorper. Donec semper nisi bibendum gravida
-                pellentesque.
+                Bienvenue sur notre section “Foire aux questions” ! Nous comprenons que vous avez peut-être des
+                questions sur notre application de génération automatisée de contenus pour les réseaux sociaux. Cette
+                section a été conçue pour vous aider à trouver les réponses à vos questions les plus fréquentes. Si vous
+                ne trouvez pas ce que vous cherchez, n'hésitez pas à nous contacter pour obtenir une assistance
+                supplémentaire.
             </p>
+        </div>
+        <div class="row m-0">
+            <div *ngFor="let question of questions; index as i">
+                <h4 id="question{{question.id}}">{{question.id}}) {{question.question}}</h4>
+                <p>
+                    {{question.answer}}
+                </p>
+                <hr *ngIf="i + 1 != questions.length" class="my-5">
+            </div>
         </div>
     </div>
 </div>

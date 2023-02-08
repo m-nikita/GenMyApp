@@ -77,7 +77,6 @@ export class GenPostComponent {
 
   copyContent(id: string) {
     const p = document.querySelector("#" + id)?.innerHTML;
-    console.log(p);
     if (p != null) {
       this.clipboardService.copyFromContent(p);
     }
