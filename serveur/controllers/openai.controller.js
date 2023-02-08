@@ -6,13 +6,12 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 const generateAnswer = async (req, res) => {
-    const prompt = req.body.prompt;
     try {
         const response = await openai.createCompletion({
             model: "text-davinci-003",
-            prompt,
+            prompt: req.body.prompt,
             temperature: 0.9,
-            max_tokens: 150,
+            max_tokens: 2048,
             top_p: 1,
             frequency_penalty: 0.0,
             presence_penalty: 0.6,

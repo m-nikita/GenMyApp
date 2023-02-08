@@ -14,6 +14,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FAQComponent } from './faq/faq.component';
 import { GenPostComponent } from './gen-post/gen-post.component';
 import { VariablesGlobales } from './variables-globales';
+import { ClipboardModule } from 'ngx-clipboard';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { VariablesGlobales } from './variables-globales';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ClipboardModule
   ],
   providers: [
     VariablesGlobales
