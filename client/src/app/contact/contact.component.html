@@ -1,31 +1,36 @@
 <div class="row m-0 h-100">
-    <div class="col-7 p-5">
-        <h1>Contactez-nous !</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem magna, auctor eget ligula non, lobortis
-            viverra ante. Phasellus ultrices, arcu et pellentesque pretium, magna est mollis velit, a rutrum magna
-            turpis nec nisl. Aliquam congue felis magna, et ullamcorper quam vehicula et. Donec eleifend risus sed purus
-            aliquam dapibus. Duis nec neque tortor. Suspendisse nec posuere enim, id blandit eros. Etiam non enim nec
-            ligula congue feugiat at id libero. Sed egestas viverra ullamcorper. Donec semper nisi bibendum gravida
-            pellentesque. </p>
-        <h4>Nos coordonnées :</h4>
-        <p>Email : ...</p>
-        <p>Téléphone : ...</p>
-        <p>Adresse : ...</p>
-        <p>Code postal : ...</p>
-        <p>Ville : ...</p>
+    <div class="col-7 d-flex flex-column justify-content-center padding-10">
+        <h1>Pour nous contacter</h1>
+        <p>
+            Notre équipe est toujours prête à répondre à vos questions et à vous fournir une assistance personnalisée
+            pour tirer le meilleur parti de notre application de génération automatisée de contenus pour les réseaux
+            sociaux. 
+            <br><br>
+            Vous pouvez nous contacter en remplissant le formulaire de contact. Nous vous répondrons dans les
+            plus brefs délais.
+            <br><br>
+            Nous sommes passionnés par notre produit et nous sommes là pour vous aider à réussir sur
+            les réseaux sociaux. Contactez-nous dès aujourd'hui pour discuter de votre stratégie de communication.
+            <br><br>
+            N’hésitez pas à consulter notre section <a routerLink="/faq">Faq</a> si besoin !
+        </p>
     </div>
-    <div class="col-5 p-5">
-        <div class="center h-100">
+    <div class="col-5 p-5 bg-linear-gradient">
+        <div class="center h-100 padding-20">
             <div class="formContainer p-5">
+                <h5>Rédiger un message</h5>
                 <span class="error">{{error}}</span>
                 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-                    <span class="text-white text-shadow">Nom de l'entreprise :</span>
-                    <input type="text" class="form-control mb-3" name="nameEnterprise" ngModel required />
-                    <span class="text-white text-shadow">Email de l'entreprise :</span>
-                    <input type="email" class="form-control mb-3" name="emailEnterprise" ngModel required />
-                    <span class="text-white text-shadow">Motif de contact :</span>
-                    <textarea class="form-control mb-3"></textarea>
-                    <input type="submit" class="btn text-shadow my-3" value="Envoyer" />
+                    <span>Nom de l'entreprise :</span>
+                    <input type="text" class="form-control" name="nameEnterprise" placeholder="Nom..." ngModel required />
+                    <span class="mb-3 d-block requiredText">*Requis</span>
+                    <span>Email de l'entreprise :</span>
+                    <input type="email" class="form-control" name="emailEnterprise" placeholder="Email..." ngModel required />
+                    <span class="mb-3 d-block requiredText">*Requis</span>
+                    <span>Motif de contact :</span>
+                    <textarea class="form-control" name="messageEnterprise" placeholder="Message..." ngModel required></textarea>
+                    <span class="mb-3 d-block requiredText">*Requis</span>
+                    <input type="submit" class="btn btnFill my-3 float-end" value="Envoyer" />
                 </form>
             </div>
         </div>

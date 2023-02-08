@@ -1,14 +1,24 @@
-<div class="center h-100">
-    <div class="formContainer p-5">
-        <h1 class="text-shadow">Connexion</h1>
-        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-            <span class="text-white text-shadow">Email de l'entreprise*</span>
-            <input type="email" class="form-control mb-3" name="emailEnterprise" ngModel required />
-            <span class="text-white text-shadow">Mot de passe*</span>
-            <input type="password" class="form-control mb-3" name="passwordEnterprise" ngModel required />
-            <span class="error d-block" [ngClass]="error != '' ? 'mb-3' : ''">{{error}}</span>
-            <input type="submit" class="btn text-shadow mb-3" value="Connexion" />
-        </form>
-        <a routerLink="/registration" class="text-shadow">Vous n'avez pas de compte ? Inscrivez-vous ici !</a>
+<div class="h-100 bg-linear-gradient">
+    <div class="center h-100">
+        <div class="formContainer p-5">
+            <h2 class="text-center">Connexion</h2>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                <span>Email de l'entreprise</span>
+                <input type="email" class="form-control" name="emailEnterprise" ngModel required />
+                <span class="mb-3 d-block requiredText">*Requis</span>
+                <span>Mot de passe</span>
+                <input type="password" class="form-control" name="passwordEnterprise" ngModel required />
+                <span class="mb-3 d-block requiredText">*Requis</span>
+                <span class="error d-block" [ngClass]="error != '' ? 'mb-3' : ''">{{error}}</span>
+                <div class="row m-0 p-0">
+                    <div class="col ps-0">
+                        <a routerLink="/registration">Je n'ai pas de compte</a>
+                    </div>
+                    <div class="col pe-0">
+                        <input type="submit" class="btn btnFill float-end" value="Connexion" />
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

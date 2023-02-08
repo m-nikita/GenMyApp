@@ -1,18 +1,18 @@
 <div id="topNavBar" class="row m-0 p-3">
     <div class="col">Logo</div>
     <div class="col-auto">
-        <a routerLink="/">Accueil</a>
-        <a routerLink="/contact">Contact</a>
-        <a routerLink="/faq">F.A.Q.</a>
-        <a routerLink="/genPost" [hidden]="vGlobales.token == null">MyPost</a>
+        <a class="btn" routerLink="/">Accueil</a>
+        <a class="btn" routerLink="/contact">Contact</a>
+        <a class="btn" routerLink="/faq">F.A.Q.</a>
+        <a class="btn" routerLink="/genPost" [hidden]="vGlobales.token == null">MyPost</a>
     </div>
     <div class="col-auto" [hidden]="vGlobales.token != null">
-        <a routerLink="/login">Se connecter</a>
-        <a routerLink="/registration">S'inscrire</a>
+        <button class="btn btnEmpty" routerLink="/login">Se connecter</button>
+        <button class="btn btnFill" routerLink="/registration">S'inscrire</button>
     </div>
     <div class="col-auto" [hidden]="vGlobales.token == null">
-        <a href="javascript:void(0)" (click)="deconnexion()">Déconnexion</a>
-        <a routerLink="/profil">Mon profil</a>
+        <button class="btn btnEmpty" (click)="deconnexion()">Déconnexion</button>
+        <button class="btn btnFill" routerLink="/profil">Mon espace</button>
     </div>
 </div>
 <router-outlet></router-outlet>
