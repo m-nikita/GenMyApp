@@ -18,7 +18,8 @@ nodemon server.js
 npm install --global @angular/cli
 
 #### Boostrap
-npm install --save boostrap
+npm install --save boostrap  
+npm install --save boostrap-icons
 
 #### ngx-clipboard
 npm install ngx-clipboard
