@@ -16,6 +16,7 @@ export class GenPostComponent {
   multiplePost: boolean = false;
   historyVisible: boolean = false;
   allPost: Post[] = [];
+  historyPost: HistoryPost[] = [];
 
   constructor(private vGlobales: VariablesGlobales, private http: HttpClient, private router: Router, private clipboardService: ClipboardService) {
     if (this.vGlobales.token == null) {
@@ -32,6 +33,12 @@ export class GenPostComponent {
       case "history":
         this.generationVisible = false;
         this.historyVisible = true;
+        const headers = new HttpHeaders().set('Authorization', 'Bearer ' + sessionStorage.getItem('token'));
+        const body = {};
+        this.http.post<any>(this.vGlobales.urlBack + 'posts', body, { headers }).subscribe(data => {
+          console.log(data);
+        });
+        break;
     }
   }
 
@@ -88,3 +95,11 @@ export interface Post {
   text: string,
   keyWords: string
 }
+
+export interface HistoryPost {
+  id: number,
+  text: string,
+  keyWords: string,
+  date: string
+}
+
