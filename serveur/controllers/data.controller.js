@@ -4,7 +4,7 @@ const savePost = async (req, res) => {
     try {
         await Data.findOneAndUpdate(
             { userId: req.user._id }, 
-            { $push: { posts: { text: res.answer, tags: [req.body?.tags] } } }, 
+            { $push: { posts: { text: res.answer, keywords: req.body?.keywords } } }, 
             { upsert: true });
         return res.json({status: 'ok', answer: res.answer})
     } catch (err) {
