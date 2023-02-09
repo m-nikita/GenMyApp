@@ -75,6 +75,14 @@ a.btn {
     font-size: small;
 }
 
+img.logoFond {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    filter: invert(1);
+    width: 6rem;
+}
+
 app-login,
 app-registration,
 app-home,
