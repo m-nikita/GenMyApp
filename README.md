@@ -29,4 +29,4 @@ OU
 ng serve
 
 ### Déploiement
-ng deploy --base-href=/angular-app/
+ng deploy --base-href=/GenMyApp/
