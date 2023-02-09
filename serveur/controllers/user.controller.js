@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken")
 const bcrypt = require('bcrypt')
 const User = require('../models/user')
 
+
 const userRegister = async (req, res) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10)
@@ -29,6 +30,7 @@ const userLogin = async (req, res) => {
     if (isPasswordValid) {
         const token = await jwt.sign(
             {
+                _id: user._id,
                 name: user.name,
                 email: user.email,
             },

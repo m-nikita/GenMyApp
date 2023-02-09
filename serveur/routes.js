@@ -3,8 +3,8 @@ const router = express.Router()
 
 const { userLogin, userRegister } = require("./controllers/user.controller")
 const auth = require("./controllers/auth.controller")
-// const {  } = require("./controllers/data.controller")
-const { generateAnswer } = require("./controllers/openai.controller")
+const { savePost, getPosts } = require("./controllers/data.controller")
+const { generateAnswer, generatePost } = require("./controllers/openai.controller")
 
 
 router.get('/', (req, res) => {
@@ -14,7 +14,9 @@ router.get('/', (req, res) => {
 router.post('/auth/login', userLogin)
 router.post('/auth/register', userRegister)
 
-router.post('/openai/generate/answer', auth, generateAnswer)
+router.post('/posts', auth, getPosts)
 
+router.post('/openai/generate/answer', auth, generateAnswer)
+router.post('/openai/generate/post', auth, generatePost, savePost)
 
 module.exports = router;
