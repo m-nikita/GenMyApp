@@ -27,3 +27,6 @@ npm install ngx-clipboard
 npm run start
 OU
 ng serve
+
+### Déploiement
+ng deploy --base-href=/angular-app/
