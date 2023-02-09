@@ -1,3 +1,11 @@
 .padding-25 {
     padding: 0 25%;
 }
+img {
+    filter: invert(1);
+    width: 15rem;
+}
+#textContainer {
+    background-color: white;
+    border-radius: 10px;
+}

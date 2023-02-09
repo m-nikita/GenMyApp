@@ -1,10 +1,16 @@
 <div class="row m-0 p-3 h-100 bg-linear-gradient">
-    <div class="d-flex flex-column justify-content-center padding-25">
-        <h1>Générez des publications sur mesure pour vos réseaux !</h1>
-        <p>
-            Notre application de génération automatisée de contenus pour les réseaux sociaux est conçue pour les agences
-            de communication qui cherchent à produire rapidement et efficacement du contenu de qualité pour leurs
-            clients.
-        </p>
+    <div class="d-flex flex-column justify-content-center align-items-center padding-25">
+        <img src="../../assets/img/Logo_GMP.svg"/>
+        <div id="textContainer" class="p-4">
+            <h1>Générez des publications sur mesure pour vos réseaux !</h1>
+            <p>
+                Notre application de génération automatisée de contenus pour les réseaux sociaux est conçue pour les agences
+                de communication qui cherchent à produire rapidement et efficacement du contenu de qualité pour leurs
+                clients.
+            </p>
+            <div class="text-end">
+                <button class="btn btnFill" [routerLink]="vGlobales.token != null ? ['/genPost'] : ['/login'] ">Commencez à utiliser l'application</button>
+            </div>
+        </div>
     </div>
 </div>
