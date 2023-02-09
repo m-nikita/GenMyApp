@@ -7,9 +7,8 @@ npm install express mongoose openai cors dotenv jsonwebtoken bcrypt
 npm install --save-dev nodemon
 
 ### Exécution
-npm run dev
-OU
-nodemon server.js
+node index  
+nodemon index
 
 ## Client
 
