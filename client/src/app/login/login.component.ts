@@ -30,7 +30,7 @@ export class LoginComponent {
         console.log(data);
         sessionStorage.setItem('token', data.token);
         this.vGlobales.token = data.token;
-        this.router.navigate(['/']);
+        this.router.navigate(['/genPost']);
       });
     }
   }

@@ -9,70 +9,70 @@
         <!-- Generation page -->
         <div class="h-100" [hidden]="!generationVisible">
             <div class="d-flex flex-column h-100">
-                <div class="row m-0">
-                    <h1>Générez vos posts ici !</h1>
-                </div>
                 <div class="row m-0 h-100 overflow-auto">
-                    <div id="choiceCriteria" class="col-3 p-3 mh-100 overflow-auto">
-                        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-                            <!-- Social media -->
-                            <span>Réseau social</span>
-                            <select class="form-control" name="socialMedia" ngModel required>
-                                <option disabled selected>Choisir un réseau social</option>
-                                <option value="Facebook">Facebook</option>
-                                <option value="Instagram">Instagram</option>
-                                <option value="Twitter">Twitter</option>
-                            </select>
-                            <span class="mb-3 d-block requiredText">*Requis</span>
-                            <!-- Thematic -->
-                            <span>Thématique</span>
-                            <select class="form-control" name="thematic" ngModel required>
-                                <option disabled selected>Choisir une thématique</option>
-                                <option value="Nature">Nature</option>
-                                <option value="Animal">Animal</option>
-                                <option value="Technologie">Technologie</option>
-                            </select>
-                            <span class="mb-3 d-block requiredText">*Requis</span>
-                            <!-- Objective -->
-                            <span>Objectif / but</span>
-                            <select class="form-control" name="objective" ngModel required>
-                                <option disabled selected>Choisir un objectif</option>
-                                <option value="Promouvoir">Promouvoir</option>
-                                <option value="Informer">Informer</option>
-                                <option value="Divertir">Divertir</option>
-                                <option value="Séduire">Séduire</option>
-                            </select>
-                            <span class="mb-3 d-block requiredText">*Requis</span>
-                            <!-- Key words -->
-                            <span>Mots-clés</span>
-                            <textarea class="form-control" name="keyWords" placeholder="Mots clés..." ngModel
-                                required></textarea>
-                            <span class="mb-3 d-block requiredText">*Requis</span>
-                            <!-- Multiple post -->
-                            <input type="checkbox" class="form-check-input mb-3" id="multiplePub" name="multiplePub"
-                                (click)="changeMultiplePost()" ngModel />
-                            <label class="form-check-label mx-2" for="multiplePub">Plusieurs publications ?</label>
-                            <span [ngClass]="multiplePost ? 'd-block' : ''" [hidden]="!multiplePost">Nombre de
-                                publications</span>
-                            <input type="number" class="form-control" name="numberPost" min="0" [hidden]="!multiplePost" ngModel
-                                [required]="multiplePost" />
-                            <span class="mb-3 requiredText" [ngClass]="multiplePost ? 'd-block' : ''"
-                                [hidden]="!multiplePost">*Requis</span>
-                            <!-- Error -->
-                            <span class="error d-block" [ngClass]="error != '' ? 'mb-3' : ''">{{error}}</span>
-                            <!-- Buttons -->
-                            <div class="row m-0">
-                                <div class="col">
-                                    <input type="reset" class="btn btn-secondary w-100" value="Réinitialiser"
-                                        (click)="reset()" />
+                    <div id="choiceCriteria" class="col-5 mh-100 overflow-auto padding-5 bg-linear-gradient">
+                        <div class="formContainer center p-5">
+                            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                                <h4>Générez vos publications</h4>
+                                <!-- Social media -->
+                                <span>Réseau social</span>
+                                <select class="form-control" name="socialMedia" ngModel required>
+                                    <option disabled selected>Choisir un réseau social</option>
+                                    <option value="Facebook">Facebook</option>
+                                    <option value="Instagram">Instagram</option>
+                                    <option value="Twitter">Twitter</option>
+                                </select>
+                                <span class="mb-3 d-block requiredText">*Requis</span>
+                                <!-- Thematic -->
+                                <span>Thématique</span>
+                                <select class="form-control" name="thematic" ngModel required>
+                                    <option disabled selected>Choisir une thématique</option>
+                                    <option value="Nature">Nature</option>
+                                    <option value="Animal">Animal</option>
+                                    <option value="Technologie">Technologie</option>
+                                </select>
+                                <span class="mb-3 d-block requiredText">*Requis</span>
+                                <!-- Objective -->
+                                <span>Objectif / but</span>
+                                <select class="form-control" name="objective" ngModel required>
+                                    <option disabled selected>Choisir un objectif</option>
+                                    <option value="Promouvoir">Promouvoir</option>
+                                    <option value="Informer">Informer</option>
+                                    <option value="Divertir">Divertir</option>
+                                    <option value="Séduire">Séduire</option>
+                                </select>
+                                <span class="mb-3 d-block requiredText">*Requis</span>
+                                <!-- Key words -->
+                                <span>Mots-clés</span>
+                                <textarea class="form-control" name="keyWords" placeholder="Mots clés..." ngModel
+                                    required></textarea>
+                                <span class="mb-3 d-block requiredText">*Requis</span>
+                                <!-- Multiple post -->
+                                <input type="checkbox" class="form-check-input mb-3" id="multiplePub" name="multiplePub"
+                                    (click)="changeMultiplePost()" ngModel />
+                                <label class="form-check-label mx-2" for="multiplePub">Plusieurs publications ?</label>
+                                <span [ngClass]="multiplePost ? 'd-block' : ''" [hidden]="!multiplePost">Nombre de
+                                    publications</span>
+                                <input type="number" class="form-control" name="numberPost" min="1" max="10"
+                                    [hidden]="!multiplePost" ngModel [required]="multiplePost" />
+                                <span class="mb-3 requiredText" [ngClass]="multiplePost ? 'd-block' : ''"
+                                    [hidden]="!multiplePost">*Requis</span>
+                                <!-- Error -->
+                                <span class="error d-block" [ngClass]="error != '' ? 'mb-3' : ''">{{error}}</span>
+                                <!-- Buttons -->
+                                <div class="row m-0">
+                                    <div class="col p-0">
+                                        <input type="reset" class="btn btnEmpty" value="Réinitialiser"
+                                            (click)="reset()" />
+                                    </div>
+                                    <div class="col p-0 d-flex justify-content-end">
+                                        <input type="submit" class="btn btnFill" value="Générer" />
+                                    </div>
                                 </div>
-                                <div class="col">
-                                    <input type="submit" class="btn btn-secondary w-100" value="Générer" />
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
-                    <div id="genPostContainer" class="col-9 p-3 mh-100 overflow-auto">
+                    <div id="genPostContainer" class="col-7 p-3 mh-100 overflow-auto">
                         <div class="row m-0" *ngFor="let post of allPost">
                             <span class="fw-bold">Publication n°{{post.id}}</span>
                             <p id="post{{post.id}}">
@@ -84,7 +84,6 @@
                             <div class="col text-end">
                                 <button class="btn btn-secondary"
                                     (click)="copyContent('post{{post.id}}')">Copier</button>
-                                <button class="btn btn-secondary ms-1">Publier</button>
                             </div>
                             <hr class="mt-3">
                         </div>
@@ -93,15 +92,10 @@
             </div>
         </div>
         <!-- History page -->
-        <div class="h-100" [hidden]="!historyVisible">
-            <div class="d-flex flex-column h-100">
-                <div class="row m-0 px-3">
+        <div class="h-100 bg-linear-gradient" [hidden]="!historyVisible">
+            <div id="historyContainer" class="d-flex flex-column h-100">
+                <div class="row m-0 overflow-auto">
                     <h1 class="p-0">Historique de vos posts !</h1>
-                </div>
-                <div class="row m-0 p-3">
-                    <input type="text" class="form-control" id="searchBar" value="Rechercher..." />
-                </div>
-                <div class="row m-0 px-3 overflow-auto">
                     <div class="row m-0 p-0">
                         <span class="fw-bold">Publication n°1</span>
                         <p>
