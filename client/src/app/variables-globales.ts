@@ -3,6 +3,6 @@ import { Injectable } from '@angular/core';
 @Injectable()
 
 export class VariablesGlobales {
-    urlBack: string = 'https://gen-my-app.vercel.app/api/';
+    urlBack: string = 'https://genmyapp-production.up.railway.app/api/';
     token = sessionStorage.getItem('token');
 }
