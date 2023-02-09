@@ -4,7 +4,6 @@
         <a class="btn" routerLink="/">Accueil</a>
         <a class="btn" routerLink="/contact">Contact</a>
         <a class="btn" routerLink="/faq">F.A.Q.</a>
-        <a class="btn" routerLink="/genPost" [hidden]="vGlobales.token == null">MyPost</a>
     </div>
     <div class="col-auto" [hidden]="vGlobales.token != null">
         <button class="btn btnEmpty" routerLink="/login">Se connecter</button>
@@ -12,7 +11,7 @@
     </div>
     <div class="col-auto" [hidden]="vGlobales.token == null">
         <button class="btn btnEmpty" (click)="deconnexion()">Déconnexion</button>
-        <button class="btn btnFill" routerLink="/profil">Mon espace</button>
+        <button class="btn btnFill" routerLink="/genPost">Mon espace</button>
     </div>
 </div>
 <router-outlet></router-outlet>

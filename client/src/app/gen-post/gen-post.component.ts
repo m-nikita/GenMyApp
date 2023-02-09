@@ -35,8 +35,16 @@ export class GenPostComponent {
         this.historyVisible = true;
         const headers = new HttpHeaders().set('Authorization', 'Bearer ' + sessionStorage.getItem('token'));
         const body = {};
+        this.historyPost = [];
         this.http.post<any>(this.vGlobales.urlBack + 'posts', body, { headers }).subscribe(data => {
-          console.log(data);
+          for(let i = 0; i < data.length; i++) {
+            this.historyPost.push({
+              id: i + 1,
+              text: data[i].text,
+              keyWords: "keyWords",
+              date: data[i].createdAt 
+            });
+          } 
         });
         break;
     }
@@ -69,8 +77,8 @@ export class GenPostComponent {
         prompt: `Génère moi une publication pour ${f.value.socialMedia} sur la thématique ${f.value.thematic} dans le but de ${f.value.objective} incluant les mots-clés suivants : ${f.value.keyWords}`
       };
       this.allPost = [];
-      for (let i = 1; i <= nbPost; i++) {
-        this.http.post<any>(this.vGlobales.urlBack + 'openai/generate/answer', body, { headers }).subscribe(data => {
+      for (let i = 1; i <= nbPost; i++) {         
+        this.http.post<any>(this.vGlobales.urlBack + 'openai/generate/post', body, { headers }).subscribe(data => {
           this.allPost.push({
             id: index,
             text: data.answer,
