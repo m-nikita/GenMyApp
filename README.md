@@ -6,7 +6,7 @@ npm install --save-dev nodemon
 ### Exécution
 npm run start
 OU
-node server.js
+node index.js
 ## Client
 ### Installation
 npm install --global @angular/cli
