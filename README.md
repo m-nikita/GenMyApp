@@ -17,8 +17,8 @@ nodemon index
 npm install --global @angular/cli
 
 #### Boostrap
-npm install --save boostrap  
-npm install --save boostrap-icons
+npm install --save bootstrap  
+npm install --save bootstrap-icons
 
 #### ngx-clipboard
 npm install ngx-clipboard
