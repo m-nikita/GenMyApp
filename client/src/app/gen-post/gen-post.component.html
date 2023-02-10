@@ -15,7 +15,7 @@
         <div class="h-100" [hidden]="!generationVisible">
             <div class="d-flex flex-column h-100">
                 <div class="row m-0 h-100 overflow-auto">
-                    <div id="choiceCriteria" class="col-5 mh-100 overflow-auto padding-5 bg-linear-gradient">
+                    <div class="col-5 mh-100 overflow-auto padding-5 bg-linear-gradient">
                         <div class="formContainer center p-5">
                             <form #f="ngForm" (ngSubmit)="onSubmit(f)">
                                 <h4>Générez vos publications</h4>
@@ -26,6 +26,8 @@
                                     <option value="Facebook">Facebook</option>
                                     <option value="Instagram">Instagram</option>
                                     <option value="Twitter">Twitter</option>
+                                    <option value="LinkedIn">LinkedIn</option>
+                                    <option value="Telegram">Telegram</option>
                                 </select>
                                 <span class="mb-3 d-block requiredText">*Requis</span>
                                 <!-- Thematic -->
@@ -49,7 +51,7 @@
                                 <span class="mb-3 d-block requiredText">*Requis</span>
                                 <!-- Key words -->
                                 <span>Mots-clés</span>
-                                <textarea class="form-control" name="keyWords" placeholder="Mots clés..." ngModel
+                                <textarea class="form-control" name="keyWords" placeholder="Mots clés..." rows="2" ngModel
                                     required></textarea>
                                 <span class="mb-3 d-block requiredText">*Requis</span>
                                 <!-- Multiple post -->
@@ -78,6 +80,9 @@
                         </div>
                     </div>
                     <div id="genPostContainer" class="col-7 p-3 mh-100 overflow-auto">
+                        <div class="d-flex justify-content-center align-items-center h-100" [hidden]="allPost.length == 0">
+                            <h4>Vos publications seront générées ici</h4>
+                        </div>
                         <div class="row m-0" *ngFor="let post of allPost">
                             <span class="fw-bold">Publication n°{{post.id}}</span>
                             <p id="post{{post.id}}">
