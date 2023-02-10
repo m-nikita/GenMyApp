@@ -41,7 +41,7 @@ export class GenPostComponent {
             this.historyPost.push({
               id: i + 1,
               text: data[i].text,
-              keyWords: "keyWords",
+              keyWords: data[i].keywords,
               date: data[i].createdAt 
             });
           } 
@@ -74,7 +74,8 @@ export class GenPostComponent {
       })
       const headers = new HttpHeaders().set('Authorization', 'Bearer ' + sessionStorage.getItem('token'));
       const body = {
-        prompt: `Génère moi une publication pour ${f.value.socialMedia} sur la thématique ${f.value.thematic} dans le but de ${f.value.objective} incluant les mots-clés suivants : ${f.value.keyWords}`
+        prompt: `Génère moi une publication pour ${f.value.socialMedia} sur la thématique ${f.value.thematic} dans le but de ${f.value.objective} incluant les mots-clés suivants : ${f.value.keyWords}`,
+        keywords: keyWords
       };
       this.allPost = [];
       for (let i = 1; i <= nbPost; i++) {         

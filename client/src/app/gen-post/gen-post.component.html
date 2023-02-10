@@ -80,7 +80,7 @@
                         </div>
                     </div>
                     <div id="genPostContainer" class="col-7 p-3 mh-100 overflow-auto">
-                        <div class="d-flex justify-content-center align-items-center h-100" [hidden]="allPost.length == 0">
+                        <div class="justify-content-center align-items-center h-100" [ngClass]="allPost.length == 0 ? 'd-flex' : ''" [hidden]="allPost.length == 0">
                             <h4>Vos publications seront générées ici</h4>
                         </div>
                         <div class="row m-0" *ngFor="let post of allPost">
