@@ -11,9 +11,6 @@
     background-color: lightgray;
     border-radius: 10px;
 }
-#choiceCriteria {
-    border-right: 1px solid black;
-}
 .padding-5 {
     padding: 5%;
 }
@@ -25,4 +22,6 @@
     border-radius: 10px;
     padding: 4% 10%;
 }
-
+textarea {
+    resize: none;
+}
