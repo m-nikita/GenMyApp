@@ -33,11 +33,6 @@ export class FAQComponent {
   },
   {
     id: 6,
-    question: "Comment puis-je payer pour l'application ?",
-    answer: "Vous pouvez payer pour l'application en utilisant une carte de crédit ou via un virement bancaire. Nous offrons également des forfaits mensuels et annuels pour les agences de communication."
-  },
-  {
-    id: 7,
     question: "Où puis-je trouver de l'aide pour utiliser l'application ?",
     answer: "Vous pouvez trouver de l'aide en nous contactant directement via la section Contact. Nous sommes toujours là pour vous aider à tirer le meilleur parti de notre application."
   }];
