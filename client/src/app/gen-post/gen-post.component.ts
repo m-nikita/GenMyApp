@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ClipboardService } from 'ngx-clipboard';
 import { VariablesGlobales } from '../variables-globales';
+import {formatDate} from '@angular/common';
 
 @Component({
   selector: 'app-gen-post',
@@ -45,7 +46,7 @@ export class GenPostComponent {
               id: i + 1,
               text: data[i].text,
               keyWords: data[i].keywords,
-              date: data[i].createdAt
+              date: formatDate(new Date(data[i].createdAt), 'dd/MM/yyyy, hh:mm a', 'en')
             });
           }
         });
